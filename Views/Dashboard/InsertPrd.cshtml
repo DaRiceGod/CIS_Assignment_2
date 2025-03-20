@@ -1,0 +1,47 @@
+﻿
+
+@{
+    ViewBag.Title = "InsertPrd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>InsertPrd</h2>
+
+@*@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>UserDataAccess</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}*@
+
+<div>
+
+    <form method="post" action="@Url.Action("InsertPrd","Dashboard")">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name">
+            @*<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>*@
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password </label>
+            <input type="text" class="form-control" id="password" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%">Submit </button>
+        <div>@ViewBag.Message</div>
+    </form>
+
+</div>
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

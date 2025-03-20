@@ -1,0 +1,73 @@
+﻿@model BasicWebApp.Models.ProductInformation
+
+
+
+
+<div>
+
+    <form method="post" action="@Url.Action("CreateProduct","Dashboard")">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="ProductName" aria-describedby="emailHelp" name="ProductName">
+            @*<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>*@
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Product Quantity </label>
+            <input type="text" class="form-control" id="ProductQuantity" name="ProductQuantity">
+        </div>
+        <div class="mb-3" style="display: none">
+            <label for="exampleInputPassword1" class="form-label">Product ID </label>
+            <input type="text" class="form-control" id="ProductId" name="ProductId">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%">Submit </button>
+        <div>@ViewBag.Message</div>
+    </form>
+
+</div>
+
+
+
+@*@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ProductInformation</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductQuantitiy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductQuantitiy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductQuantitiy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
